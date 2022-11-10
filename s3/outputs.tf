@@ -1,7 +1,7 @@
 output "bucket_name" {
-  value = aws_s3_bucket.tfstate.id
+  value = aws_s3_bucket.bucket.id
 }
 
 output "bucket_arn" {
-  value = aws_s3_bucket.tfstate.arn
+  value = aws_s3_bucket.bucket.arn
 }
