@@ -27,9 +27,7 @@ resource "aws_s3_bucket" "tfstate" {
     Name            = module.naming.bucket-name
     Environment     = var.environment
     Project         = var.project
-    CostCenter      = var.cost_center
     TemplateVersion = var.template_version
-    BcmRelevance    = var.bcm
     ManagedBy       = var.team
   }
 }

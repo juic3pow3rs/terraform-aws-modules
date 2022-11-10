@@ -11,25 +11,25 @@ variable "role" {
 variable "team" {
   description = "Project or Team"
   type        = string
-  default     = "db-service-team"
+  default     = "andi"
 }
 
 variable "team_shortname" {
   description = "The short name of the team responsilbe for the resource deployment"
   type        = string
-  default     = "dbs"
+  default     = "aiml"
 }
 
 variable "resource_shortname" {
   description = "The short name of the resource deployed"
   type        = string
-  default     = "s3b"
+  default     = "s3"
 }
 
 variable "prefix" {
-  description = "Defined prefix for all services in cloudops"
+  description = "Defined prefix for all services"
   type        = string
-  default     = "azd-service-dbs"
+  default     = "uni"
 }
 
 variable "override_bucket_name" {

@@ -11,36 +11,24 @@ variable "role" {
 variable "team" {
   description = "Project or Team"
   type        = string
-  default     = "db-service-team"
+  default     = "andi"
 }
 
 variable "team_shortname" {
   description = "The short name of the team responsilbe for the resource deployment"
   type        = string
-  default     = "dbs"
+  default     = "aiml"
 }
 
 variable "resource_shortname" {
   description = "The short name of the resource deployed"
   type        = string
-  default     = "s3b"
+  default     = "s3"
 }
 
 variable "s3_bucket_versioning" {
   default     = true
   description = "true/false for if versioning should be enabled"
-}
-
-variable "project" {
-  description = "Customer or project name."
-  type        = string
-  default     = "db-service-team"
-}
-
-variable "cost_center" {
-  description = "Cost Center for billing and cost calculation"
-  type        = string
-  default     = ""
 }
 
 variable "template_version" {
