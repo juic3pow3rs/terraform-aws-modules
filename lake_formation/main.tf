@@ -1,12 +1,3 @@
-module "naming" {
-  source             = "../naming/lake_formation"
-  environment        = var.environment
-  role               = var.role
-  team               = var.team
-  team_shortname     = var.team_shortname
-  resource_shortname = var.resource_shortname
-}
-
 resource "aws_lakeformation_data_lake_settings" "admin" {
   admins = [var.admin_user_arn]
 }
