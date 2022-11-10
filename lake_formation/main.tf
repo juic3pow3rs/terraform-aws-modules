@@ -25,26 +25,26 @@ resource "aws_lakeformation_resource" "data_lake" {
 }
 
 resource "aws_s3_object" "bronze_folder" {
-  bucket = var.s3_bucket_name
-  key    =  "bronze/"
+  bucket       = var.s3_bucket_name
+  key          = "bronze/"
   content_type = "application/x-directory"
 }
 
 resource "aws_s3_object" "silver_folder" {
-  bucket = var.s3_bucket_name
-  key    =  "bronze/"
+  bucket       = var.s3_bucket_name
+  key          = "bronze/"
   content_type = "application/x-directory"
 }
 
 resource "aws_s3_object" "gold_folder" {
-  bucket = var.s3_bucket_name
-  key    =  "bronze/"
+  bucket       = var.s3_bucket_name
+  key          = "bronze/"
   content_type = "application/x-directory"
 }
 
 resource "aws_s3_object" "datafile" {
   bucket = var.s3_bucket_name
-  key    =  "bronze/ingestion/${var.file_name}"
+  key    = "bronze/ingestion/${var.file_name}"
   source = var.file_source
 }
 

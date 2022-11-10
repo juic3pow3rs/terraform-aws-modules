@@ -38,5 +38,5 @@ variable "template_version" {
 }
 
 variable "override_bucket_name" {
-  default = null 
+  default = null
 }

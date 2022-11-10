@@ -1,10 +1,10 @@
 module "naming" {
-  source             = "../naming/s3"
-  environment        = var.environment
-  role               = var.role
-  team               = var.team
-  team_shortname     = var.team_shortname
-  resource_shortname = var.resource_shortname
+  source               = "../naming/s3"
+  environment          = var.environment
+  role                 = var.role
+  team                 = var.team
+  team_shortname       = var.team_shortname
+  resource_shortname   = var.resource_shortname
   override_bucket_name = var.override_bucket_name
 }
 
@@ -24,7 +24,7 @@ resource "aws_s3_bucket" "bucket" {
   }
 
   tags = {
-    Name            = module.naming.bucket-name
+    Name            = module.naming.bucket_name
     Environment     = var.environment
     Project         = var.project
     TemplateVersion = var.template_version
