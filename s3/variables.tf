@@ -37,12 +37,6 @@ variable "template_version" {
   default     = "v0.0.1"
 }
 
-variable "bcm" {
-  description = "Categoration of the database is bcm relevant"
-  type        = string
-  default     = "no"
-}
-
 variable "override_bucket_name" {
   default = null 
 }
