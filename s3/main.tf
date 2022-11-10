@@ -26,7 +26,6 @@ resource "aws_s3_bucket" "bucket" {
   tags = {
     Name            = module.naming.bucket_name
     Environment     = var.environment
-    Project         = var.project
     TemplateVersion = var.template_version
     ManagedBy       = var.team
   }
