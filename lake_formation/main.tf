@@ -2,20 +2,6 @@ resource "aws_lakeformation_data_lake_settings" "admin" {
   admins = [var.admin_user_arn]
 }
 
-resource "aws_lakeformation_data_lake_settings" "admin_permission" {
-  admins = [var.admin_user_arn]
-
-  create_database_default_permissions {
-    permissions = ["ALL"]
-    principal   = var.admin_user_arn
-  }
-
-  create_table_default_permissions {
-    permissions = ["ALL"]
-    principal   = var.admin_user_arn
-  }
-}
-
 resource "aws_iam_service_linked_role" "lakeformation" {
   aws_service_name = "lakeformation.amazonaws.com"
 }
