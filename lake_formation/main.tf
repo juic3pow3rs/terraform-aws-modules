@@ -44,7 +44,7 @@ resource "aws_s3_object" "gold_folder" {
 
 resource "aws_s3_object" "datafile" {
   bucket = var.s3_bucket_name
-  key    =  "bronze/ingestion/${var.filename}"
+  key    =  "bronze/ingestion/${var.file_name}"
   source = var.file_source
 }
 
