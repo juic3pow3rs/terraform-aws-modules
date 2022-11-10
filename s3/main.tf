@@ -1,5 +1,5 @@
 module "naming" {
-  source             = "../naming/s3_bucket"
+  source             = "../naming/s3"
   environment        = var.environment
   role               = var.role
   team               = var.team
@@ -8,7 +8,7 @@ module "naming" {
   override_bucket_name = var.override_bucket_name
 }
 
-resource "aws_s3_bucket" "tfstate" {
+resource "aws_s3_bucket" "bucket" {
   bucket = module.naming.bucket-name
 
   server_side_encryption_configuration {
