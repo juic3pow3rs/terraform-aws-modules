@@ -18,13 +18,13 @@ resource "aws_s3_object" "bronze_folder" {
 
 resource "aws_s3_object" "silver_folder" {
   bucket       = var.s3_bucket_name
-  key          = "bronze/"
+  key          = "silber/"
   content_type = "application/x-directory"
 }
 
 resource "aws_s3_object" "gold_folder" {
   bucket       = var.s3_bucket_name
-  key          = "bronze/"
+  key          = "gold/"
   content_type = "application/x-directory"
 }
 
