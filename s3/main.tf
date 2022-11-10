@@ -9,7 +9,7 @@ module "naming" {
 }
 
 resource "aws_s3_bucket" "bucket" {
-  bucket = module.naming.bucket-name
+  bucket = module.naming.bucket_name
 
   server_side_encryption_configuration {
     rule {
