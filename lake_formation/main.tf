@@ -33,4 +33,3 @@ resource "aws_s3_object" "datafile" {
   key    = "bronze/ingestion/${var.file_name}"
   source = var.file_source
 }
-
