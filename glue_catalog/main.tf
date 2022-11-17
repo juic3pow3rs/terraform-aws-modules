@@ -27,13 +27,22 @@ EOF
 }
 
 resource "aws_iam_role_policy_attachment" "glue_service" {
-    role = "${aws_iam_role.glue.id}"
+    role = aws_iam_role.glue.id
     policy_arn = "arn:aws:iam::aws:policy/service-role/AWSGlueServiceRole"
 }
 
 resource "aws_glue_catalog_database" "aws_glue_catalog_database" {
   name = module.naming.catalog_db
   location_uri = "s3://${var.s3_bucket_name}/${var.folder_path}" #s3://uni-aiml-s3-cloud01-dev/bronze/ingestion
+}
+
+resource "aws_lakeformation_permissions" "database" {
+  principal   = aws_iam_role.glue.arn
+  permissions = ["CREATE_TABLE", "ALTER", "DESCRIBE"]
+
+  database {
+    name       = module.naming.catalog_db
+  }
 }
 
 resource "aws_glue_crawler" "example" {
