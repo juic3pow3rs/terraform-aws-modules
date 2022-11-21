@@ -36,9 +36,6 @@ resource "aws_iam_policy" "glue_crawler_policy" {
   policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
-      {
-    "Version": "2012-10-17",
-    "Statement": [
         {
             "Effect": "Allow",
             "Action": [
@@ -124,8 +121,6 @@ resource "aws_iam_policy" "glue_crawler_policy" {
                 "arn:aws:ec2:*:*:instance/*"
             ]
         }
-    ]
-},
     ]
   })
 }
