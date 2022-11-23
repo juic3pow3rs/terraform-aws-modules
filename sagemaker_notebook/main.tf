@@ -485,6 +485,6 @@ resource "aws_s3_object" "datafile" {
 
 resource "aws_sagemaker_notebook_instance" "uebung01" {
   name          = module.naming.sagemaker_name
-  role_arn      = aws_iam_service_linked_role.sagemaker.arn
+  role_arn      = aws_iam_role.sagemaker.arn
   instance_type = "ml.t3.medium"
 }
