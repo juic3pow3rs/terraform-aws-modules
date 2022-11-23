@@ -473,7 +473,7 @@ resource "aws_iam_policy" "sagemaker_policy" {
 }
 
 resource "aws_iam_role_policy_attachment" "sagemaker" {
-  role       = aws_iam_service_linked_role.sagemaker.id
+  role       = aws_iam_role.sagemaker.id
   policy_arn = aws_iam_policy.sagemaker_policy.arn
 }
 
