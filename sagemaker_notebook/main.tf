@@ -42,8 +42,17 @@ resource "aws_s3_object" "datafile" {
   source = var.file_source
 }
 
+resource "aws_sagemaker_code_repository" "uebung" {
+  code_repository_name = "uebung-notebooks"
+
+  git_config {
+    repository_url = "https://github.com/juic3pow3rs/terraform-aws-sagemaker-notebook.git"
+  }
+}
+
 resource "aws_sagemaker_notebook_instance" "uebung01" {
   name          = module.naming.sagemaker_name
   role_arn      = aws_iam_role.sagemaker.arn
   instance_type = "ml.t3.medium"
+  default_code_repository = aws_sagemaker_code_repository.uebung.code_repository_name
 }
