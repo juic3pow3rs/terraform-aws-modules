@@ -169,9 +169,9 @@ Modules with an identifier are modeled around having a naming module. Naming mod
   
   module | shortname 
   ------------ | -------------
-s3 | s3
-lake_formateion | lf
-glue_catalog | gl_cat
-sagemaker | sgm
+  s3 | s3
+  lake_formateion | lf
+  glue_catalog | gl_cat
+  sagemaker | sgm
 
 </details>
