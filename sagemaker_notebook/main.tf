@@ -51,8 +51,8 @@ resource "aws_sagemaker_code_repository" "uebung" {
 }
 
 resource "aws_sagemaker_notebook_instance" "uebung01" {
-  name          = module.naming.sagemaker_name
-  role_arn      = aws_iam_role.sagemaker.arn
-  instance_type = "ml.t3.medium"
+  name                    = module.naming.sagemaker_name
+  role_arn                = aws_iam_role.sagemaker.arn
+  instance_type           = "ml.t3.medium"
   default_code_repository = aws_sagemaker_code_repository.uebung.code_repository_name
 }

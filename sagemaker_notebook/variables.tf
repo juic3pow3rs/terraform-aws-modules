@@ -54,6 +54,6 @@ variable "file_source" {
 }
 
 variable "repository_url" {
-  type = string
+  type        = string
   description = "URL to repository which stores notebooks"
 }
