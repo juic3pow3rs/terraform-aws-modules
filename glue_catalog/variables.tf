@@ -43,7 +43,7 @@ variable "s3_bucket_name" {
   description = "Name of S3 Bucket"
 }
 
-variable folder_path {
+variable "folder_path" {
   type        = string
   description = "Path of file"
 }
