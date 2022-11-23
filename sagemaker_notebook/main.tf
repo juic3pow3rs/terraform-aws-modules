@@ -12,7 +12,7 @@ resource "aws_iam_service_linked_role" "sagemaker" {
 }
 
 resource "aws_iam_policy" "sagemaker_policy" {
-  name        = "AWSGlueCrawlerPolicy"
+  name        = "AWSSageMakerPolicy"
   path        = "/"
   description = "Policy for Sagemaker"
 
@@ -458,7 +458,7 @@ resource "aws_iam_policy" "sagemaker_policy" {
 }
 
 resource "aws_iam_role_policy_attachment" "sagemaker" {
-  role       = aws_iam_role.glue.id
+  role       = aws_iam_service_linked_role.sagemaker.id
   policy_arn = aws_iam_policy.sagemaker_policy.arn
 }
 
@@ -469,7 +469,7 @@ resource "aws_s3_object" "datafile" {
 }
 
 resource "aws_sagemaker_notebook_instance" "uebung01" {
-  name          = naming.sagemaker.name
+  name          = module.naming.sagemaker_name
   role_arn      = aws_iam_service_linked_role.sagemaker.arn
   instance_type = "ml.t3.medium"
 }
