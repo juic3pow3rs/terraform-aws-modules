@@ -46,7 +46,7 @@ resource "aws_sagemaker_code_repository" "uebung" {
   code_repository_name = "uebung-notebooks"
 
   git_config {
-    repository_url = "https://github.com/juic3pow3rs/terraform-aws-sagemaker-notebook.git"
+    repository_url = var.repository_url
   }
 }
 

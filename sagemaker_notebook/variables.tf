@@ -52,3 +52,8 @@ variable "file_source" {
   type        = string
   description = "Filepath of which to upload"
 }
+
+variable "repository_url" {
+  type = string
+  description = "URL to repository which stores notebooks"
+}
