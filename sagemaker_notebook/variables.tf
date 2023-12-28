@@ -38,21 +38,6 @@ variable "template_version" {
   default     = "v0.0.1"
 }
 
-variable "s3_bucket_name" {
-  type        = string
-  description = "Name of S3 Bucket"
-}
-
-variable "file_name" {
-  type        = string
-  description = "Filename of which to upload"
-}
-
-variable "file_source" {
-  type        = string
-  description = "Filepath of which to upload"
-}
-
 variable "repository_url" {
   type        = string
   description = "URL to repository which stores notebooks"

@@ -36,12 +36,6 @@ resource "aws_iam_role_policy_attachment" "AmazonS3FullAccess" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonS3FullAccess"
 }
 
-resource "aws_s3_object" "datafile" {
-  bucket = var.s3_bucket_name
-  key    = var.file_name
-  source = var.file_source
-}
-
 resource "aws_sagemaker_code_repository" "uebung" {
   code_repository_name = "uebung-notebooks"
 
